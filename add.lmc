@@ -1,0 +1,6 @@
+// Ask for two numbers and add them together
+        inp
+        sta 99
+        inp
+        add 99
+        out
