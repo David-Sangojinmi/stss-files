@@ -78,11 +78,14 @@ def decode(inst):
 accumulator = 0
 outbox = 0
 flag = False
+branches = 0
+overflows = 0
+underflows = 0
 
 def checkAcc(accumulator):
     if accumulator < 0:
         accumulator += 1000
-        underlows += 1
+        underflows += 1
         flag = True
     elif accumulator > 999:
         accumulator -= 1000
@@ -90,10 +93,6 @@ def checkAcc(accumulator):
         flag = True
     else:
         flag = False
-
-branches = 0
-overflows = 0
-underflows = 0
 
 def evaluate():
     global branches
@@ -125,7 +124,7 @@ def execute(opcode, operand):
         return False
     if opcode == 6:
         pc = operand
-        brances += 1
+        branches += 1
         return False
     if opcode == 7:
         if accumulator == 0:
