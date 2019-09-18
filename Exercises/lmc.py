@@ -104,7 +104,7 @@ def evaluate():
 def execute(opcode, operand):
     """Execute a single instruction, return True if a HLT."""
     global accumulator
-    global outobx
+    global outbox
     global flag
     if opcode == 1:
         accumulator += mailboxes[operand]
